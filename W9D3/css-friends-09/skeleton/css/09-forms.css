@@ -1,0 +1,25 @@
+/* PHASE 9: Forms */
+input[type=text] {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+textarea[type=text] {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.content-main > a {
+    display: block;
+    float: left;
+}
+
+form {
+    display: block;
+    float: left;
+    margin: 0 20px;
+    padding: 20px;
+    
+}
