@@ -16,17 +16,21 @@
 export const RECEIVE_TODO = "RECEIVE_TODO";
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
 
-export const recieveTodo = (title, body, done) => {
+function uniqueId() {
+    return new Date().getTime();
+}
+//! NOTE -> Check later to see if we need to deconstruct the object passed since now we are using this action in the container
+export const receiveTodo = ({title, body, done}) => {
     return {
         type: RECEIVE_TODO,
         title: title,
         body: body,
         done: done,
-        key: Math.floor(Math.random() * 1000)
+        key: uniqueId()
     };
 };
 //
-export const recieveTodos = todos => {
+export const receiveTodos = todos => {
     return {
         type: RECEIVE_TODOS,
         todos: todos
