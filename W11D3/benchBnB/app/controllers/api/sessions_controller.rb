@@ -1,8 +1,11 @@
 class Api::SessionsController < ApplicationController
   def create
+    # debugger
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+    # debugger
     if @user.nil?
-      render json: ['Nope. Wrong credentials!'], status: 401
+      # debugger
+      render json: ['Ops! Wrong credentials!'], status: 401
     else
       login!(@user)
       render 'api/users/show'
@@ -13,15 +16,8 @@ class Api::SessionsController < ApplicationController
     if current_user
         logout!
         render json: {}
-        # render json: { message: 'Logout successful.' }
     else
         render json: ['No current user to logout'], status: 404
     end
-
-    # if !current_user
-    #   render json: ['No current user to logout'], status: 404
-    # end
-    #   logout!
-    #   render json: {}
   end
 end

@@ -1,9 +1,11 @@
-export const signUp = (user) =>
+export const signUp = (user) => {
+  // debugger
+  return (
   $.ajax({
     url: "/api/users",
     method: "POST",
     data: { user },
-  });
+  }))};
 
 export const login = (user) =>
   $.ajax({
